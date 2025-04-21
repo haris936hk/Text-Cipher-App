@@ -35,8 +35,6 @@ Each cipher includes tooltips, descriptions, and intuitive controls.
 |------------|-----------|
 | ![Light UI](screenshots/light_mode.png) | ![Dark UI](screenshots/dark_mode.png) |
 
-> 💡 Screenshots go in the `screenshots/` folder — make sure to add your own!
-
 ---
 
 ## 🚀 Getting Started
