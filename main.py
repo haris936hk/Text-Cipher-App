@@ -269,10 +269,14 @@ def main(page: ft.Page):
 
         # Create the content structure
         cipher_content = ft.Column([
-            # Cipher description card
+            # Cipher description card with text color that adapts to theme
             ft.Card(
                 content=ft.Container(
-                    content=ft.Text(cipher_info[cipher_name], size=14),
+                    content=ft.Text(
+                        cipher_info[cipher_name], 
+                        size=14,
+                        color="#FFFFFF" if is_dark else "#000000"  # White text for dark mode, black for light mode
+                    ),
                     padding=10,
                 ),
                 elevation=0,
@@ -437,3 +441,4 @@ def main(page: ft.Page):
 
 
 ft.app(target=main)
+
