@@ -3,7 +3,6 @@ import re
 import flet as ft
 from ciphers import playfair, monoalphabetic, caesar, vigenere, substitution, transposition, rail_fence, affine
 
-
 class CipherValidator:    
     @staticmethod
     def validate_text_input(text):
