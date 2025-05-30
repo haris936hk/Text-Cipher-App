@@ -155,7 +155,7 @@ def main(page: ft.Page):
 
     is_dark = True
 
-    theme_icon = ft.Icon(name=ft.icons.DARK_MODE)
+    theme_icon = ft.Icon(name=ft.Icons.DARK_MODE)
     theme_label = ft.Text("Dark Mode", weight="w500")
     
     def toggle_theme(e):
@@ -163,7 +163,7 @@ def main(page: ft.Page):
         is_dark = not is_dark
         page.theme_mode = ft.ThemeMode.DARK if is_dark else ft.ThemeMode.LIGHT
         theme_label.value = "Dark Mode" if is_dark else "Light Mode"
-        theme_icon.name = ft.icons.DARK_MODE if is_dark else ft.icons.LIGHT_MODE
+        theme_icon.name = ft.Icons.DARK_MODE if is_dark else ft.Icons.LIGHT_MODE
         page.update()
 
     theme_toggle = ft.Switch(value=True, on_change=toggle_theme)
@@ -418,7 +418,7 @@ def main(page: ft.Page):
 
         def get_action_buttons():
             swap_btn = ft.IconButton(
-                icon=ft.icons.SWAP_HORIZ,
+                icon=ft.Icons.SWAP_HORIZ,
                 tooltip="Swap input/output",
                 on_click=swap_text,
                 icon_color="#FF9800"
@@ -426,14 +426,14 @@ def main(page: ft.Page):
             
             upload_btn = ft.ElevatedButton(
                 "Upload File",
-                icon=ft.icons.UPLOAD_FILE,
+                icon=ft.Icons.UPLOAD_FILE,
                 on_click=lambda _: file_picker.pick_files(),
                 style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)),
             )
             
             save_btn = ft.ElevatedButton(
                 "Save Output",
-                icon=ft.icons.DOWNLOAD,
+                icon=ft.Icons.DOWNLOAD,
                 on_click=download_file,
                 style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=8)),
             )
@@ -536,11 +536,11 @@ def main(page: ft.Page):
         if page.width < 600:
             return ft.NavigationBar(
                 destinations=[
-                    ft.NavigationDestination(icon=ft.icons.GRID_VIEW, label="Playfair"),
-                    ft.NavigationDestination(icon=ft.icons.ABC, label="Monoalpha"),
-                    ft.NavigationDestination(icon=ft.icons.LOCK_CLOCK, label="Caesar"),
-                    ft.NavigationDestination(icon=ft.icons.KEY, label="Vigenère"),
-                    ft.NavigationDestination(icon=ft.icons.SWAP_CALLS, label="More..."),
+                    ft.NavigationDestination(icon=ft.Icons.GRID_VIEW, label="Playfair"),
+                    ft.NavigationDestination(icon=ft.Icons.ABC, label="Monoalpha"),
+                    ft.NavigationDestination(icon=ft.Icons.LOCK_CLOCK, label="Caesar"),
+                    ft.NavigationDestination(icon=ft.Icons.KEY, label="Vigenère"),
+                    ft.NavigationDestination(icon=ft.Icons.SWAP_CALLS, label="More..."),
                 ],
                 on_change=lambda e: handle_mobile_nav(e.control.selected_index),
                 selected_index=0,
@@ -552,14 +552,14 @@ def main(page: ft.Page):
                 animation_duration=300,
                 scrollable=True,
                 tabs=[
-                    ft.Tab(text="Playfair", icon=ft.icons.GRID_VIEW),
-                    ft.Tab(text="Monoalphabetic", icon=ft.icons.ABC),
-                    ft.Tab(text="Caesar", icon=ft.icons.LOCK_CLOCK),
-                    ft.Tab(text="Vigenère", icon=ft.icons.KEY),
-                    ft.Tab(text="Substitution", icon=ft.icons.FIND_REPLACE),
-                    ft.Tab(text="Rail Fence", icon=ft.icons.RAILWAY_ALERT),
-                    ft.Tab(text="Transposition", icon=ft.icons.TABLE_ROWS),
-                    ft.Tab(text="Affine", icon=ft.icons.FUNCTIONS),
+                    ft.Tab(text="Playfair", icon=ft.Icons.GRID_VIEW),
+                    ft.Tab(text="Monoalphabetic", icon=ft.Icons.ABC),
+                    ft.Tab(text="Caesar", icon=ft.Icons.LOCK_CLOCK),
+                    ft.Tab(text="Vigenère", icon=ft.Icons.KEY),
+                    ft.Tab(text="Substitution", icon=ft.Icons.FIND_REPLACE),
+                    ft.Tab(text="Rail Fence", icon=ft.Icons.RAILWAY_ALERT),
+                    ft.Tab(text="Transposition", icon=ft.Icons.TABLE_ROWS),
+                    ft.Tab(text="Affine", icon=ft.Icons.FUNCTIONS),
                 ],
                 expand=False,
             )
@@ -622,7 +622,7 @@ def main(page: ft.Page):
             return ft.Container(
                 content=ft.Column([
                     ft.Row([
-                        ft.Icon(ft.icons.SECURITY, size=24),
+                        ft.Icon(ft.Icons.SECURITY, size=24),
                         ft.Text("Text Cipher App", size=20, weight="bold", expand=True),
                     ]),
                     theme_toggle_container
@@ -632,7 +632,7 @@ def main(page: ft.Page):
         else:
             return ft.Container(
                 content=ft.Row([
-                    ft.Icon(ft.icons.SECURITY, size=32),
+                    ft.Icon(ft.Icons.SECURITY, size=32),
                     ft.Text("Text Cipher App", size=28, weight="bold", expand=True),
                     theme_toggle_container
                 ]),
